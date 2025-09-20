@@ -1,6 +1,6 @@
-# Steam Group Members Blocker (Windows)
+# Steam Group Members Blocker
 
-Einfaches Tool das Mitglieder einer Steam‑Gruppe sammelt und anschließend blockiert oder entblockt
+Einfaches Tool das automatisch alle Mitglieder von den AfD-Steam-Gruppen bei Steam blockieren
 
 ## 1) Download & Ordner öffnen
 - Auf GitHub den grünen „Code“-Button klicken → „Download ZIP“ wählen und das ZIP entpacken (z. B. `C:\Users\<Name>\Documents\steam-group-blocker`).  
