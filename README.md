@@ -49,4 +49,5 @@ Einfaches Tool das Mitglieder einer Steam‑Gruppe sammelt und anschließend blo
 - Viele Meldungen/Warnungen sind normal, solange der Fortschritt sichtbar weiterläuft.
 
 ## Sicherheit
-- `.env` niemals teilen oder in ein öffentliches Repo hochladen (in `.gitignore` eintragen). 
+- Nutzung auf eigenes Risiko.
+- Cookies unbedingt vertraulich behandeln.
