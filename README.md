@@ -36,7 +36,7 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   # sessionid = ""
   # steamLoginSecure = ""
   ```
-- Hinweis: Cookies können ablaufen; bei Fehlern die beiden Werte einfach neu aus dem Browser übernehmen.
+Hinweis: Cookies können ablaufen; bei Fehlern die beiden Werte einfach neu aus dem Browser übernehmen.
 
 ## 4) Gruppenliste prüfen (groups.txt)
 - Die Datei `groups.txt` ist bereits im Repository vorhanden.  
