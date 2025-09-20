@@ -1,6 +1,6 @@
 # Steam Group Members Blocker (Windows)
 
-Dieses Tool liest Mitglieder einer Steam‑Gruppe ein und blockiert oder entblockt sie automatisiert. Diese Anleitung ist extra kurz und nur für Windows.
+Dieses Tool liest Mitglieder einer Steam‑Gruppe ein und blockiert oder entblockt sie automatisiert.
 
 Wichtig
 - Nutzung auf eigenes Risiko. Cookies privat halten.
