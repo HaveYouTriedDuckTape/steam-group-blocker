@@ -52,8 +52,8 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
 - Jede Zeile enthält genau eine Gruppen‑URL, z. B.:
   ```
   https://steamcommunity.com/groups/afd-esport
-  # https://steamcommunity.com/groups/antigruen
-  https://steamcommunity.com/groups/NPDesportz
+  https://steamcommunity.com/groups/antigruen
+  # https://steamcommunity.com/groups/NPDesportz
   ```
 - Um eine Gruppe zu deaktiviren '#' davor schreiben 
 - Weitere Gruppen hinzufügen = neue Zeilen anhängen, vorhandene Einträge können bearbeitet werden.
