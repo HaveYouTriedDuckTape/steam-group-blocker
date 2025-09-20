@@ -1,66 +1,60 @@
-# Steam Group Members Blocker
+# Steam Group Members Blocker (Windows)
 
-Dieses Tool liest Mitglieder einer Steam‑Gruppe ein und blockiert oder entblockt sie automatisiert.
+Einfaches Tool das Mitglieder einer Steam‑Gruppe sammelt und anschließend blockiert oder entblockt. Nutzung auf eigenes Risiko; Cookies unbedingt vertraulich behandeln.
 
 ---
 
-## 1) Herunterladen Entpacken und Ordner öffnen
-- Grüner Code-Button dürcken -> "Download Zip" drücken
-- Den Projektordner aus dem zip entpacken
+## 1) Download & Ordner öffnen
+- Auf GitHub den grünen „Code“-Button anklicken → „Download ZIP“ wählen.  
+- ZIP entpacken (z. B. nach `C:\Users\<Name>\Documents\steam-group-blocker`) und den Ordner in PowerShell öffnen (Rechtsklick → „Im Terminal öffnen“).
 
-## 2) Python und Umgebung
-- Python 3.11 oder neuer installieren: https://www.python.org/downloads/windows/
-- PowerShell im Projektordner öffnen:
-  - Rechtsklick im Ordner → „Im Terminal öffnen“.
-- Benötigte Pakete installieren:
+## 2) Python vorbereiten
+- Python 3.11 oder neuer installieren: https://www.python.org/downloads/windows/  
+  Tipp: Beim Installer „Add Python to PATH“ anhaken.
+- Virtuelle Umgebung anlegen und aktivieren:
+  ```
+  python -m venv .venv
+  .\.venv\Scripts\Activate.ps1
+  ```
+- Abhängigkeiten installieren:
   ```
   pip install -r requirements.txt
   ```
-  Falls keine requirements.txt vorhanden ist:
+  Falls `requirements.txt` fehlt:
   ```
   pip install requests python-dotenv rich
   ```
 
 ## 3) Cookies eintragen (.env)
-- Im Projektordner eine Datei .env anlegen.
-- Zwei Werte aus dem eingeloggten Browser kopieren (Domain steamcommunity.com):
-  - sessionid
-  - steamLoginSecure
-  <img width="765" height="345" alt="68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67" src="https://github.com/user-attachments/assets/c203dc64-f65a-4a90-918a-096ad90d66eb" />
-
- 
-- Inhalt der .env:
+- Im Projektordner eine Datei `.env` anlegen.  
+- Im Browser bei steamcommunity.com eingeloggt sein, Entwickler‑Werkzeuge öffnen (F12) → „Application/Storage“ → „Cookies“ → `https://steamcommunity.com`.  
+- Die Werte von `sessionid` und `steamLoginSecure` kopieren und in `.env` eintragen:
   ```
   SESSIONID=hier_den_sessionid_wert_einfügen
   STEAMLOGINSECURE=hier_den_steamLoginSecure_wert_einfügen
   ```
-- Tipp: Cookies im Browser finden (eingeloggt sein), dann Entwickler‑Werkzeuge öffnen → Speicher/Storage → Cookies → steamcommunity.com → sessionid und steamLoginSecure ablesen (siehe Screenshot).
+Hinweis: Cookies laufen ab – bei Fehlern später einfach die beiden Werte neu aus dem Browser kopieren.
 
 ## 4) Gruppenliste anlegen (groups.txt)
-- Datei groups.txt im Projektordner erstellen.
+- Im Projektordner eine Datei `groups.txt` erstellen.  
 - Pro Zeile genau eine Gruppen‑URL eintragen, z. B.:
   ```
   https://steamcommunity.com/groups/afd-esport
   ```
-- Mehrere Gruppen sind möglich: einfach weitere Zeilen hinzufügen.
+- Für mehrere Gruppen einfach weitere Zeilen hinzufügen.
 
 ## 5) Starten
-- Standard‑Start (liest groups.txt, verwendet .env):
+- PowerShell im Ordner, ggf. venv re‑aktivieren:
   ```
+  .\.venv\Scripts\Activate.ps1
   python .\steam-group-blocker.py
   ```
-- Während der Laufzeit:
-  - Es erscheint ein kompakter Fortschrittsbalken (Seiten, IDs, OK/Fehler).
-  - Bei Netzwerkfehlern wartet das Tool kurz und läuft automatisch weiter.
+- Während der Ausführung zeigt das Tool einen kompakten Fortschrittsbalken (Seiten, IDs, Erfolge/Fehler).
 
-## 6) Häufige Fragen (kurz)
-- „Dry‑Run“ (nur IDs anzeigen, nichts blocken)?
-  - In der mitgelieferten Konfiguration kann ein Trockentest aktiviert sein; für einen echten Lauf sicherstellen, dass dieser aus ist.
-- „Zu viele Meldungen in der Konsole“?
-  - Normal. Die Anzeige bleibt bewusst kompakt; Warnungen sind unkritisch, wenn der Fortschritt weiterläuft.
-- „Es passiert nichts“?
-  - Prüfen, ob .env korrekt gefüllt ist und groups.txt gültige URLs enthält.
-  - Bei weiterem Problem PowerShell neu starten und erneut versuchen.
-
-
-Nutzung auf eigenes Risiko. Cookies privat halten.
+## 6) Kurz‑Hilfe (häufige Fälle)
+- Es passiert nichts oder Fehler 400/403: `.env` prüfen, Cookies ggf. erneuern.  
+- PowerShell blockiert das Aktivieren der Umgebung: PowerShell als Admin starten und einmalig ausführen:
+  ```
+  Set-ExecutionPolicy RemoteSigned
+  ```
+- Zu viele Meldungen: Normal; so lange der Fortschritt läuft, ist keine Aktion nötig.
