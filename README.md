@@ -42,8 +42,8 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   [cookies]
   # Cookies aus .env laden (SESSIONID, STEAMLOGINSECURE) oder hier explizit setzen
   use_env = false
-  sessionid = "2134ik14jtjn14ik12"
-  steamLoginSecure = "134124oogo1o1313o1"
+  sessionid = "hier_deine_sessionid"
+  steamLoginSecure = "hier_dein_steamLoginSecure"
   ```
 
 ## 4) Gruppenliste prüfen (groups.txt)
