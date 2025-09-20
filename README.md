@@ -72,9 +72,9 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
 - Viele Meldungen/Warnungen sind normal, solange der Fortschritt sichtbar weiterläuft.
 
 ## Sicherheit
-- Nutzung auf eigenes Risiko.
 - Cookies unbedingt vertraulich behandeln.
 - `.env` ggf. `config.toml` enthälten die Cookies-Daten und daüfen niemals geteilt oder veröffentlicht werden.
+- Nutzung auf eigenes Risiko.
 
 #### Hat jemand Kaffee für mich 🥹? 
 <details>
