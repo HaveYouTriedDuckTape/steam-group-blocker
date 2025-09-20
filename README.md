@@ -1,4 +1,4 @@
-# Steam Group Members Blocker (Windows)
+# Steam Group Members Blocker
 
 Dieses Tool liest Mitglieder einer Steam‑Gruppe ein und blockiert oder entblockt sie automatisiert.
 
