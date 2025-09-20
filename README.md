@@ -13,11 +13,6 @@ Nutzung auf eigenes Risiko; Cookies unbedingt vertraulich behandeln.
 ## 2) Python vorbereiten
 - Python 3.11 oder neuer installieren: https://www.python.org/downloads/windows/  
   Tipp: Beim Installer „Add Python to PATH“ anhaken.
-- Virtuelle Umgebung anlegen und aktivieren:
-  ```
-  python -m venv .venv
-  .\.venv\Scripts\Activate.ps1
-  ```
 - Abhängigkeiten installieren:
   ```
   pip install -r requirements.txt
