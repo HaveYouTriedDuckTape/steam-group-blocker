@@ -3,7 +3,7 @@
 Einfaches Tool das automatisch alle Mitglieder von den AfD-Steam-Gruppen bei Steam blockieren
 
 ## 1) Download & Ordner öffnen
-- Auf GitHub den grünen „Code“-Button klicken → „Download ZIP“ wählen und das ZIP entpacken (z. B. `C:\Users\<Name>\Documents\steam-group-blocker`).  
+- Auf GitHub den grünen „Code“-Button klicken → „Download ZIP“ wählen und das ZIP entpacken.  
 - Im entpackten Ordner PowerShell öffnen (Explorer im Ordner → Adresseingabe: `powershell` → Enter).  
 
 ## 2) Python einrichten
