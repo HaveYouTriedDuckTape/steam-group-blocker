@@ -4,13 +4,13 @@ Dieses Tool liest Mitglieder einer Steam‑Gruppe ein und blockiert oder entbloc
 
 ---
 
-## 1) Herunterladen und Ordner öffnen
-- Den Projektordner z. B. nach C:\Users\<Name>\Documents\steam-group-blocker kopieren.
-- PowerShell im Projektordner öffnen:
-  - Rechtsklick im Ordner → „Im Terminal öffnen“.
+## 1) Herunterladen Entpacken und Ordner öffnen
+- Den Projektordner aus dem zip entpacken
 
 ## 2) Python und Umgebung
 - Python 3.11 oder neuer installieren: https://www.python.org/downloads/windows/
+- PowerShell im Projektordner öffnen:
+  - Rechtsklick im Ordner → „Im Terminal öffnen“.
 - Benötigte Pakete installieren:
   ```
   pip install -r requirements.txt
