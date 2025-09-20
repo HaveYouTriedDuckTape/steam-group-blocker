@@ -1,6 +1,7 @@
 # Steam Group Members Blocker (Windows)
 
-Einfaches Tool das Mitglieder einer Steam‑Gruppe sammelt und anschließend blockiert oder entblockt. Nutzung auf eigenes Risiko; Cookies unbedingt vertraulich behandeln.
+Einfaches Tool das Mitglieder einer Steam‑Gruppe sammelt und anschließend blockiert oder entblockt. 
+Nutzung auf eigenes Risiko; Cookies unbedingt vertraulich behandeln.
 
 ---
 
