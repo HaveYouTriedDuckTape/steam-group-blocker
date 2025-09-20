@@ -4,7 +4,6 @@ Dieses Tool liest Mitglieder einer Steam‑Gruppe ein und blockiert oder entbloc
 
 Wichtig
 - Nutzung auf eigenes Risiko. Cookies privat halten.
-- Es werden nur Gruppen‑URLs aus der Datei groups.txt verwendet.
 
 ---
 
@@ -29,6 +28,10 @@ Wichtig
 - Zwei Werte aus dem eingeloggten Browser kopieren (Domain steamcommunity.com):
   - sessionid
   - steamLoginSecure
+
+<img width="765" height="345" alt="68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67" src="https://github.com/user-attachments/assets/c203dc64-f65a-4a90-918a-096ad90d66eb" />
+
+ 
 - Inhalt der .env:
   ```
   SESSIONID=hier_den_sessionid_wert_einfügen
@@ -47,7 +50,7 @@ Wichtig
 ## 5) Starten
 - Standard‑Start (liest groups.txt, verwendet .env):
   ```
-  python .\main.py
+  python .\steam-group-blocker.py
   ```
 - Während der Laufzeit:
   - Es erscheint ein kompakter Fortschrittsbalken (Seiten, IDs, OK/Fehler).
