@@ -5,7 +5,7 @@ Dieses Tool liest Mitglieder einer Steam‑Gruppe ein und blockiert oder entbloc
 ---
 
 ## 1) Herunterladen Entpacken und Ordner öffnen
-- Grüner <Code>-Button dürcken -> als Zip downloaden
+- Grüner Code-Button dürcken -> als Zip downloaden
 - Den Projektordner aus dem zip entpacken
 
 ## 2) Python und Umgebung
