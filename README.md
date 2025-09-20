@@ -79,7 +79,7 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
 <details>
   <summary><b>Unterstützen</b></summary>
 
-  Danke schön!
+  Wenn dir dieses Projekt gefällt, kannst du mich mit einem Kaffee unterstützen. Danke! 🫶
 
   [![Ko-fi](https://img.shields.io/badge/support_me_on_ko--fi-F16061?style=for-the-badge&logo=kofi&logoColor=f5f5f5)](https://ko-fi.com/haveyoutriedducktape)
 </details>
