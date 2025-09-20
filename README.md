@@ -1,6 +1,3 @@
-Kurz: Hier ist eine kurze README.md nur für Windows, mit simpler Installation und Nutzung, wobei alle Gruppen‑URLs ausschließlich aus der Datei groups.txt geladen werden und das Bild zeigt, wo sessionid und steamLoginSecure zu finden sind.[1]
-
-```markdown
 # Steam Group Members Blocker (Windows) [image:1]
 
 Einfaches Windows‑Tool, das Mitglieder einer Steam‑Gruppe sammelt und anschließend blockiert oder entblockt, wobei alle Gruppen‑URLs ausschließlich aus der Datei groups.txt gelesen werden [image:1]
@@ -14,16 +11,16 @@ Einfaches Windows‑Tool, das Mitglieder einer Steam‑Gruppe sammelt und anschl
    ```
    python -m venv .venv
    .\.venv\Scripts\Activate.ps1
-   ``` [image:1]
+   ``` 
 2) Benötigte Pakete installieren [image:1]
    ```
    pip install requests python-dotenv rich
-   ``` [image:1]
+   ``` 
 3) groups.txt anlegen: Eine Gruppen‑URL pro Zeile, z. B [image:1]
    ```
    https://steamcommunity.com/groups/deine-gruppe-1
    https://steamcommunity.com/groups/deine-gruppe-2
-   ``` [image:1]
+   ```
 
 ## Cookies (.env) erstellen – so findest du sie [image:1]
 1) Im Browser bei der Steam‑Community angemeldet sein, dann Entwicklerwerkzeuge öffnen (Taste F12) und zu „Application/Storage → Cookies → steamcommunity.com“ wechseln [image:1]
@@ -32,16 +29,17 @@ Einfaches Windows‑Tool, das Mitglieder einer Steam‑Gruppe sammelt und anschl
    ```
    SESSIONID=hier_deine_sessionid
    STEAMLOGINSECURE=hier_dein_steamLoginSecure
-   ``` [image:1]
+   ```
 
 Hinweis zum Bild: Es zeigt exakt die beiden benötigten Cookie‑Einträge „sessionid“ und „steamLoginSecure“ im Cookie‑Speicher des Browsers, die in die .env übernommen werden müssen [image:1]
+![Uploading 68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67.png…]()
 
 ## Skript starten [image:1]
 - PowerShell im Projektordner öffnen, virtuelles Environment aktivieren und das Skript starten [image:1]
   ```
   .\.venv\Scripts\Activate.ps1
   python .\steam-group-blocker.py
-  ``` [image:1]
+  ```
 - Während der Ausführung erscheint ein kompakter Fortschrittsbalken, der Seitenfortschritt, gesammelte IDs sowie Erfolge und Fehler anzeigt [image:1]
 
 ## Tipps bei Problemen (kurz) [image:1]
@@ -51,6 +49,3 @@ Hinweis zum Bild: Es zeigt exakt die beiden benötigten Cookie‑Einträge „se
 
 ## Sicherheit [image:1]
 - Die Datei .env niemals weitergeben oder ins Internet hochladen, da sie Zugangsdaten enthält, und am besten in .gitignore eintragen, wenn ein Git‑Repository verwendet wird [image:1]
-```
-
-[1](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/images/104152156/23467854-0a72-4eca-bb3c-f9badcbb19b6/68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67.jpg)
