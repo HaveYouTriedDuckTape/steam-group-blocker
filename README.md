@@ -47,8 +47,8 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   steamLoginSecure = "hier_dein_steamLoginSecure"
   ```
 
-## 4) Gruppenliste prüfen
-- Die Datei `groups.txt` ist bereits im Repository vorhanden.  
+## 4) optional: Gruppenliste erweitern
+- Die Datei `groups.txt` ist bereits im Repository vorhanden und gefüllt.  
 - Jede Zeile enthält genau eine Gruppen‑URL, z. B.:
   ```
   https://steamcommunity.com/groups/afd-esport
