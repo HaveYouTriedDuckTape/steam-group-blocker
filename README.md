@@ -75,4 +75,4 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
 - Cookies unbedingt vertraulich behandeln.
 
 ## Hat jemand Kaffee für mich 🥹?
-- [Ko-fi](https://ko-fi.com/haveyoutriedducktape)
+[Ko-fi](https://ko-fi.com/haveyoutriedducktape)
