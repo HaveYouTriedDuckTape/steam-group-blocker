@@ -17,16 +17,24 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   py -m pip install --user requests python-dotenv rich
   ```
 
-## 3) Cookies eintragen (.env)
-- Im Projektordner eine Datei `.env` anlegen.  
+## 3) Cookies eintragen
 - Im Browser bei steamcommunity.com angemeldet sein, dann Entwicklerwerkzeuge (F12) → „Application/Storage“ → „Cookies“ → `https://steamcommunity.com`.
 
   <img width="765" height="345" alt="68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67" src="https://github.com/user-attachments/assets/9c68e94a-0a08-411e-8ccb-1fb6d8608259" />
 
+- Im Projektordner eine Datei `.env` anlegen.  
 - Die Werte `sessionid` und `steamLoginSecure` kopieren und so eintragen:
   ```
   SESSIONID=hier_deine_sessionid
   STEAMLOGINSECURE=hier_dein_steamLoginSecure
+  ```
+- oder in config.toml eintragen unter:
+  ```
+  [cookies]
+  # Cookies aus .env laden (SESSIONID, STEAMLOGINSECURE) oder hier explizit setzen
+  use_env = true
+  # sessionid = ""
+  # steamLoginSecure = ""
   ```
 - Hinweis: Cookies können ablaufen; bei Fehlern die beiden Werte einfach neu aus dem Browser übernehmen.
 
