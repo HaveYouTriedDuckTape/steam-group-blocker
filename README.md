@@ -73,3 +73,6 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
 ## Sicherheit
 - Nutzung auf eigenes Risiko.
 - Cookies unbedingt vertraulich behandeln.
+
+## Kaffee?
+- [Ko-fi](https://ko-fi.com/haveyoutriedducktape)
