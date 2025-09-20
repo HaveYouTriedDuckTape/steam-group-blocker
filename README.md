@@ -74,6 +74,7 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
 ## Sicherheit
 - Nutzung auf eigenes Risiko.
 - Cookies unbedingt vertraulich behandeln.
+- `.env` ggf. `config.toml` enthälten die Cookies-Daten und daüfen niemals geteilt oder veröffentlicht werden
 
 #### Hat jemand Kaffee für mich 🥹? 
 
