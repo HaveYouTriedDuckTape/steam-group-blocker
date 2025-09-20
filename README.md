@@ -53,7 +53,6 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   ```
   python .\steam-group-blocker.py
   ```
-- Während der Ausführung zeigt das Tool einen kompakten Fortschrittsbalken (Seiten, IDs, Erfolge/Fehler).
 
 ## 5) Kurz‑Hilfe
 - Cookies können ablaufen; bei Fehlern die beiden Werte einfach neu aus dem Browser übernehmen.
