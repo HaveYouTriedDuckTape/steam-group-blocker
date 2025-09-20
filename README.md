@@ -1,5 +1,3 @@
-[![Ko-fi](https://img.shields.io/badge/support_me_on_ko--fi-F16061?style=for-the-badge&logo=kofi&logoColor=f5f5f5)](https://ko-fi.com/haveyoutriedducktape)
-
 # Steam Group Members Blocker
 
 Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam blockieren
@@ -75,3 +73,6 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
 ## Sicherheit
 - Nutzung auf eigenes Risiko.
 - Cookies unbedingt vertraulich behandeln.
+
+
+[![Ko-fi](https://img.shields.io/badge/support_me_on_ko--fi-F16061?style=for-the-badge&logo=kofi&logoColor=f5f5f5)](https://ko-fi.com/haveyoutriedducktape)
