@@ -28,8 +28,7 @@ Wichtig
 - Zwei Werte aus dem eingeloggten Browser kopieren (Domain steamcommunity.com):
   - sessionid
   - steamLoginSecure
-
-<img width="765" height="345" alt="68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67" src="https://github.com/user-attachments/assets/c203dc64-f65a-4a90-918a-096ad90d66eb" />
+  <img width="765" height="345" alt="68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67" src="https://github.com/user-attachments/assets/c203dc64-f65a-4a90-918a-096ad90d66eb" />
 
  
 - Inhalt der .env:
