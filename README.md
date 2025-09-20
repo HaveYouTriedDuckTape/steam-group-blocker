@@ -1,270 +1,56 @@
-# Steam Group Members Blocker (Python)
+Kurz: Hier ist eine kurze README.md nur für Windows, mit simpler Installation und Nutzung, wobei alle Gruppen‑URLs ausschließlich aus der Datei groups.txt geladen werden und das Bild zeigt, wo sessionid und steamLoginSecure zu finden sind.[1]
 
-Dieses Werkzeug liest Mitglieder einer Steam‑Gruppe über den offiziellen XML‑Feed ein und blockiert oder entblockt die gefundenen Accounts – konfigurierbar, mit .env‑Cookies, TOML‑Konfiguration, optionaler Parallelisierung und einer kompakten Rich‑Progress‑Anzeige.
+```markdown
+# Steam Group Members Blocker (Windows) [image:1]
 
-Wichtig
-- Nutzung auf eigenes Risiko. Cookies sind vertraulich zu behandeln.
-- Bitte die Regeln und Bedingungen der betroffenen Plattform beachten.
+Einfaches Windows‑Tool, das Mitglieder einer Steam‑Gruppe sammelt und anschließend blockiert oder entblockt, wobei alle Gruppen‑URLs ausschließlich aus der Datei groups.txt gelesen werden [image:1]
 
----
+## Was wird benötigt [image:1]
+- Windows 10/11 und Python 3.11 oder neuer, bei der Installation „Add Python to PATH“ aktivieren [image:1]
+- Ein Steam‑Account, im Browser bereits angemeldet [image:1]
 
-## Schnellstart (TL;DR)
+## Installation in 3 Schritten [image:1]
+1) Projektordner vorbereiten und PowerShell im Ordner öffnen, dann ein virtuelles Environment anlegen und aktivieren [image:1]
+   ```
+   python -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   ``` [image:1]
+2) Benötigte Pakete installieren [image:1]
+   ```
+   pip install requests python-dotenv rich
+   ``` [image:1]
+3) groups.txt anlegen: Eine Gruppen‑URL pro Zeile, z. B [image:1]
+   ```
+   https://steamcommunity.com/groups/deine-gruppe-1
+   https://steamcommunity.com/groups/deine-gruppe-2
+   ``` [image:1]
 
-1) Python 3.11+ installieren.  
-2) Projekt entpacken/klonen und Terminal im Projektordner öffnen.  
-3) Virtuelle Umgebung anlegen und aktivieren.  
-4) Abhängigkeiten installieren.  
-5) .env und config.toml füllen.  
-6) Skript starten.
+## Cookies (.env) erstellen – so findest du sie [image:1]
+1) Im Browser bei der Steam‑Community angemeldet sein, dann Entwicklerwerkzeuge öffnen (Taste F12) und zu „Application/Storage → Cookies → steamcommunity.com“ wechseln [image:1]
+2) Die Werte von „sessionid“ und „steamLoginSecure“ kopieren, wie im Bild mit roten Pfeilen markiert, nur die Zeichenfolge rechts ohne Anführungszeichen [image:1]
+3) Im Projektordner eine Datei .env anlegen und beide Werte eintragen [image:1]
+   ```
+   SESSIONID=hier_deine_sessionid
+   STEAMLOGINSECURE=hier_dein_steamLoginSecure
+   ``` [image:1]
 
-Beispiel:
-```
-python -m venv .venv
-# macOS/Linux
-. .venv/bin/activate
-# Windows (PowerShell)
-. .venv\Scripts\Activate.ps1
+Hinweis zum Bild: Es zeigt exakt die beiden benötigten Cookie‑Einträge „sessionid“ und „steamLoginSecure“ im Cookie‑Speicher des Browsers, die in die .env übernommen werden müssen [image:1]
 
-pip install -r requirements.txt  # oder: pip install requests python-dotenv rich
-python main.py
-```
+## Skript starten [image:1]
+- PowerShell im Projektordner öffnen, virtuelles Environment aktivieren und das Skript starten [image:1]
+  ```
+  .\.venv\Scripts\Activate.ps1
+  python .\steam-group-blocker.py
+  ``` [image:1]
+- Während der Ausführung erscheint ein kompakter Fortschrittsbalken, der Seitenfortschritt, gesammelte IDs sowie Erfolge und Fehler anzeigt [image:1]
 
----
+## Tipps bei Problemen (kurz) [image:1]
+- Bei 400/403 Fehlern Cookies in .env erneuern, also „sessionid“ und „steamLoginSecure“ erneut aus dem Browser kopieren und speichern, dann Skript neu starten [image:1]
+- Wenn die PowerShell das Aktivieren der virtuellen Umgebung blockiert, PowerShell als Administrator öffnen und „Set‑ExecutionPolicy RemoteSigned“ ausführen, dann erneut aktivieren [image:1]
+- Bei auffällig vielen Verbindungswarnungen oder Aussetzern die parallele Last im Skript reduzieren und erneut probieren, das verbessert die Stabilität auf Windows oft deutlich [image:1]
 
-## Voraussetzungen
-
-- Betriebssystem: Windows, macOS oder Linux  
-- Python: Version 3.11 oder neuer  
-- Internetzugang  
-- Ein Steam‑Account mit gültigen Community‑Cookies:
-  - sessionid
-  - steamLoginSecure
-
----
-
-## Installation
-
-### 1) Projekt vorbereiten
-- Code in einen lokalen Ordner kopieren/klonen, z. B. C:\Projekte\steam-blocker oder ~/Projects/steam-blocker.
-
-### 2) Virtuelle Umgebung
-```
-python -m venv .venv
-# macOS/Linux
-. .venv/bin/activate
-# Windows (PowerShell)
-. .venv\Scripts\Activate.ps1
+## Sicherheit [image:1]
+- Die Datei .env niemals weitergeben oder ins Internet hochladen, da sie Zugangsdaten enthält, und am besten in .gitignore eintragen, wenn ein Git‑Repository verwendet wird [image:1]
 ```
 
-### 3) Abhängigkeiten
-Entweder mit requirements.txt:
-```
-pip install -r requirements.txt
-```
-
-Oder manuell:
-```
-pip install requests python-dotenv rich
-```
-
-Optionale requirements.txt:
-```
-requests>=2.31.0
-python-dotenv>=1.0.1
-rich>=13.7
-```
-
----
-
-## Konfiguration
-
-Das Skript liest Einstellungen aus zwei Dateien im Projektordner: .env und config.toml.
-
-### 1) .env (vertraulich!)
-- Nicht in die Versionskontrolle committen.
-- Enthält die beiden Cookies des eingeloggten Browsers (Domain: steamcommunity.com).
-
-Beispiel (.env):
-```
-SESSIONID=your_sessionid_cookie_value
-STEAMLOGINSECURE=your_steamLoginSecure_cookie_value
-```
-
-Woher kommen die Werte?
-- Im eingeloggten Browser (z. B. Chrome/Firefox) die Website mit Community‑Bereich öffnen.
-- In den Entwicklertools die Cookies für steamcommunity.com ansehen.
-- Die Werte von „sessionid“ und „steamLoginSecure“ kopieren (ohne Anführungszeichen) und hier einfügen.
-
-Tipp: Cookies verfallen. Bei Fehlern (z. B. 400/403) ggf. neue Werte aus dem Browser holen.
-
-### 2) config.toml
-- Gesamtsteuerung: Quelle(n), Limit, Modus, Parallelität, Logging.
-
-Beispiel (config.toml):
-```
-[general]
-# Entweder groups_file ODER group_url setzen:
-groups_file = "groups.txt"                 # Datei mit Gruppen-URLs (eine pro Zeile)
-# group_url = "https://steamcommunity.com/groups/afd-esport"
-
-max_per_group = 500                        # 0 = alle Mitglieder der Gruppe
-dry_run = false                            # true = nur IDs sammeln/anzeigen, nichts blocken
-log_level = "INFO"                         # DEBUG | INFO | WARNING | ERROR
-
-[cookies]
-use_env = true                             # Cookies aus .env verwenden
-# Alternativ direkt setzen, falls use_env=false:
-# sessionid = ""
-# steamLoginSecure = ""
-
-[block]
-mode = "block"                             # "block" oder "unblock"
-concurrency = 4                            # parallele Block-POSTs (1 = sequentiell, 2–4 empfohlen)
-referer = "group"                          # "group" oder "profile" (Referer-Header)
-```
-
-Beispiel (groups.txt):
-```
-https://steamcommunity.com/groups/afd-esport
-# Kommentare (Zeilen beginnend mit #) werden ignoriert
-```
-
----
-
-## Nutzung
-
-Standardaufruf (nutzt ./config.toml und .env):
-```
-python main.py
-```
-
-Konfigurationspfad explizit setzen:
-```
-# macOS/Linux
-CONFIG_PATH=./pfad/zu/config.toml python main.py
-
-# Windows (PowerShell)
-$env:CONFIG_PATH=".\pfad\zu\config.toml"; python .\main.py
-```
-
-Typische Arbeitsweise:
-1) Erst „dry_run = true“ setzen und Start testen (Sammeln/Anzeige der IDs ohne Änderungen).  
-2) max_per_group z. B. auf 100–500 setzen, um gezielt zu testen.  
-3) „dry_run = false“ setzen, um den Modus „block“ oder „unblock“ auszuführen.  
-4) concurrency anfangs konservativ (z. B. 2–4) halten.
-
-Ausgabe:
-- Ein kompakter, kombinierter Fortschrittsbalken zeigt:
-  - Modus (BLK/UNBLK)
-  - Gruppe (gekürzt)
-  - Seitenfortschritt (p:x/y)
-  - Anzahl gesammelter IDs (ids)
-  - Erfolgreich geblockte/entblockte (ok)
-  - Fehler (err)
-- Nach Abschluss wird eine kurze Zusammenfassung geloggt.
-
----
-
-## Beispiele
-
-Nur IDs sammeln (Dry‑Run):
-- In config.toml: dry_run = true
-- Start:
-```
-python main.py
-```
-
-500 Mitglieder blocken, parallele Anfragen:
-- config.toml:
-```
-[general]
-max_per_group = 500
-dry_run = false
-
-[block]
-mode = "block"
-concurrency = 4
-```
-- Start:
-```
-python main.py
-```
-
-Entblocken:
-- config.toml:
-```
-[block]
-mode = "unblock"
-```
-
----
-
-## Fehler & Lösungen (Kurz)
-
-- 400 Client Error:
-  - Meist „sessionID“/Cookies ungültig oder abgelaufen.
-  - Neue Cookie‑Werte aus dem Browser übernehmen.
-
-- 403 Forbidden oder 429 Too Many Requests:
-  - Parallelität reduzieren (concurrency kleiner wählen).
-  - Kurze Pause einlegen und erneut versuchen.
-
-- 503 Service Unavailable:
-  - Dienst temporär überlastet. Später erneut versuchen.
-
-- Interaktive Fehlerbehandlung:
-  - Bei Fehlern pausiert das Skript 15 Sekunden, zeigt eine kurze Erklärung und fragt, ob abgebrochen werden soll.
-  - Ohne Antwort innerhalb von 15 Sekunden läuft das Skript automatisch weiter.
-
----
-
-## Häufige Fragen (FAQ)
-
-- Werden Freunde übersprungen?
-  - Aktuell: Nein. Das Skript arbeitet rein ID‑basiert. Bei Bedarf vorher ID‑Listen filtern.
-
-- Kann man mehrere Gruppen in einem Lauf verarbeiten?
-  - Ja, per groups_file. Jede Zeile eine Gruppen‑URL.
-
-- Werden alle Mitglieder der Gruppe geladen?
-  - Ja, seitenweise. Das Skript bricht früh ab, wenn:
-    - max_per_group erreicht ist, oder
-    - eine Seite weniger als 1000 IDs liefert (typische letzte Seite des Feeds).
-
-- Wie sicher sind die Cookies?
-  - Cookies sind geheimnisgleich zu behandeln. .env niemals veröffentlichen.
-
----
-
-## Deinstallation / Aufräumen
-
-Virtuelle Umgebung löschen:
-- Den Ordner .venv einfach entfernen.
-
-Abhängigkeiten entfernen:
-- Wenn keine virtuelle Umgebung genutzt wurde, ggf. manuell deinstallieren oder ein frisches venv anlegen.
-
-Konfigurations‑/Hilfsdateien:
-- .env, config.toml, groups.txt nach Bedarf behalten oder löschen.
-
----
-
-## Hinweise für Fortgeschrittene
-
-- Logging:
-  - log_level auf DEBUG schalten, um detailliertere Meldungen zu erhalten.
-- Performance:
-  - concurrency moderat erhöhen, aber bei Fehlern wieder senken.
-- Anpassungen:
-  - Referer „group“ vs. „profile“ kann je nach Umgebung Unterschiede machen.
-
----
-
-## Lizenz
-
-MIT (empfohlen). Bitte LICENSE im Repository ergänzen.
-
-## Beiträge
-
-- Issues und Pull Requests willkommen (Fehler, Verbesserungen, Dokumentation).
-- Bitte keine sensiblen Daten (Cookies, private IDs) in öffentlichen Tickets posten.
+[1](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/images/104152156/23467854-0a72-4eca-bb3c-f9badcbb19b6/68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67.jpg)
