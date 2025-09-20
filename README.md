@@ -48,25 +48,14 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   steamLoginSecure = "hier_dein_steamLoginSecure"
   ```
 
-## 4) optional: Gruppenliste erweitern
-- Die Datei `groups.txt` ist im Repository vorhanden und gefüllt.  
-- Jede Zeile enthält genau eine Gruppen‑URL, z. B.:
-  ```
-  https://steamcommunity.com/groups/afd-esport
-  https://steamcommunity.com/groups/antigruen
-  # https://steamcommunity.com/groups/NPDesportz
-  ```
-- Um eine Gruppe zu deaktiviren '#' davor schreiben 
-- Weitere Gruppen hinzufügen = neue Zeilen anhängen, vorhandene Einträge können bearbeitet werden.
-
-## 5) Start
+## 4) Start
 - PowerShell im Ordner:
   ```
   python .\steam-group-blocker.py
   ```
 - Während der Ausführung zeigt das Tool einen kompakten Fortschrittsbalken (Seiten, IDs, Erfolge/Fehler).
 
-## 6) Kurz‑Hilfe
+## 5) Kurz‑Hilfe
 - Cookies können ablaufen; bei Fehlern die beiden Werte einfach neu aus dem Browser übernehmen.
 - 400/403 oder „passiert nichts“: `.env` prüfen und Cookies erneuern.  
 - Viele Meldungen/Warnungen sind normal, solange der Fortschritt sichtbar weiterläuft.
