@@ -11,7 +11,7 @@ max_per_group = 0
 dry_run = false
 
 # Log-Level: DEBUG, INFO, WARNING, ERROR
-log_level = "WARNING"
+log_level = "INFO"
 
 [cookies]
 # Cookies aus .env laden (SESSIONID, STEAMLOGINSECURE) oder hier explizit setzen
