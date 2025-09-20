@@ -15,11 +15,6 @@ Wichtig
 
 ## 2) Python und Umgebung
 - Python 3.11 oder neuer installieren: https://www.python.org/downloads/windows/
-- Virtuelle Umgebung anlegen:
-  ```
-  python -m venv .venv
-  . .\.venv\Scripts\Activate.ps1
-  ```
 - Benötigte Pakete installieren:
   ```
   pip install -r requirements.txt
