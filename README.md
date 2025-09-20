@@ -4,10 +4,10 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
 
 ## 1) Download & Ordner öffnen
 - Auf GitHub den grünen „Code“-Button klicken → „Download ZIP“ wählen und das ZIP entpacken.  
-- Im entpackten Ordner PowerShell öffnen
 
 ## 2) Python einrichten
-- Python 3.11+ installieren: https://www.python.org/downloads/windows/ (Häkchen „Add Python to PATH“ setzen).  
+- Python 3.11+ installieren: https://www.python.org/downloads/windows/ (Häkchen „Add Python to PATH“ setzen).
+- Im entpackten Ordner PowerShell/Terminal öffnen (Rechtsklick -> "In Terminal öffnen")
 - Abhängigkeiten installieren:
   ```
   py -m pip install -r requirements.txt
