@@ -20,7 +20,7 @@ Einfaches Tool das Mitglieder einer Steam‑Gruppe sammelt und anschließend blo
 ## 3) Cookies eintragen (.env)
 - Im Projektordner eine Datei `.env` anlegen.  
 - Im Browser bei steamcommunity.com angemeldet sein, dann Entwicklerwerkzeuge (F12) → „Application/Storage“ → „Cookies“ → `https://steamcommunity.com`.
-  <img width="765" height="345" alt="68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67" src="https://github.com/user-attachments/assets/9c68e94a-0a08-411e-8ccb-1fb6d8608259" />
+<img width="765" height="345" alt="68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67" src="https://github.com/user-attachments/assets/9c68e94a-0a08-411e-8ccb-1fb6d8608259" />
 - Die Werte `sessionid` und `steamLoginSecure` kopieren und so eintragen:
   ```
   SESSIONID=hier_deine_sessionid
