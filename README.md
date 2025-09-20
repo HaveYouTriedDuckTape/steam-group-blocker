@@ -14,7 +14,7 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   ```
   Falls die Datei fehlt:
   ```
-  py -m pip install --user requests python-dotenv rich
+  py -m pip install requests python-dotenv rich
   ```
 
 ## 3) Cookies finden und kopieren
