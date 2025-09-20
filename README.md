@@ -48,7 +48,7 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   ```
 
 ## 4) optional: Gruppenliste erweitern
-- Die Datei `groups.txt` ist bereits im Repository vorhanden und gefüllt.  
+- Die Datei `groups.txt` ist im Repository vorhanden und gefüllt.  
 - Jede Zeile enthält genau eine Gruppen‑URL, z. B.:
   ```
   https://steamcommunity.com/groups/afd-esport
