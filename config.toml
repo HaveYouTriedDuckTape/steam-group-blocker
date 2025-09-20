@@ -1,0 +1,30 @@
+[general]
+# Entweder eine Datei mit Gruppen-URLs (eine pro Zeile, # = Kommentar) ...
+groups_file = "groups.txt"
+# ... oder eine einzelne Gruppen-URL direkt:
+# group_url = "https://steamcommunity.com/groups/afd-esport"
+
+# Maximal X Mitglieder je Gruppe verarbeiten (0 = alle)
+max_per_group = 0
+
+# Nur ausgeben statt blocken (true = Dry-Run, false = wirklich blocken)
+dry_run = false
+
+# Log-Level: DEBUG, INFO, WARNING, ERROR
+log_level = "WARNING"
+
+[cookies]
+# Cookies aus .env laden (SESSIONID, STEAMLOGINSECURE) oder hier explizit setzen
+use_env = true
+# sessionid = ""
+# steamLoginSecure = ""
+
+[block]
+# Modus: "block" (sperren) oder "unblock" (entsperren)
+mode = "block"
+
+# Parallele Block-POSTs (1 = sequentiell; >1 aktiviert ThreadPool)
+concurrency = 100
+
+# Referer-Wahl für BlockUserAjax: "group" nutzt die Gruppen-URL, "profile" nutzt die Profil-URL der jeweiligen SteamID
+referer = "group"
