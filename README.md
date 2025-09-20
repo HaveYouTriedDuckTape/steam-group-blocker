@@ -1,51 +1,76 @@
-# Steam Group Members Blocker (Windows) [image:1]
+# Steam Group Members Blocker (Windows)
 
-Einfaches Windows‑Tool, das Mitglieder einer Steam‑Gruppe sammelt und anschließend blockiert oder entblockt, wobei alle Gruppen‑URLs ausschließlich aus der Datei groups.txt gelesen werden [image:1]
+Dieses Tool liest Mitglieder einer Steam‑Gruppe ein und blockiert oder entblockt sie automatisiert. Diese Anleitung ist extra kurz und nur für Windows.
 
-## Was wird benötigt [image:1]
-- Windows 10/11 und Python 3.11 oder neuer, bei der Installation „Add Python to PATH“ aktivieren [image:1]
-- Ein Steam‑Account, im Browser bereits angemeldet [image:1]
+Wichtig
+- Nutzung auf eigenes Risiko. Cookies privat halten.
+- Es werden nur Gruppen‑URLs aus der Datei groups.txt verwendet.
 
-## Installation in 3 Schritten [image:1]
-1) Projektordner vorbereiten und PowerShell im Ordner öffnen, dann ein virtuelles Environment anlegen und aktivieren [image:1]
-   ```
-   python -m venv .venv
-   .\.venv\Scripts\Activate.ps1
-   ``` 
-2) Benötigte Pakete installieren [image:1]
-   ```
-   pip install requests python-dotenv rich
-   ``` 
-3) groups.txt anlegen: Eine Gruppen‑URL pro Zeile, z. B [image:1]
-   ```
-   https://steamcommunity.com/groups/deine-gruppe-1
-   https://steamcommunity.com/groups/deine-gruppe-2
-   ```
+---
 
-## Cookies (.env) erstellen – so findest du sie [image:1]
-1) Im Browser bei der Steam‑Community angemeldet sein, dann Entwicklerwerkzeuge öffnen (Taste F12) und zu „Application/Storage → Cookies → steamcommunity.com“ wechseln [image:1]
-2) Die Werte von „sessionid“ und „steamLoginSecure“ kopieren, wie im Bild mit roten Pfeilen markiert, nur die Zeichenfolge rechts ohne Anführungszeichen [image:1]
-3) Im Projektordner eine Datei .env anlegen und beide Werte eintragen [image:1]
-   ```
-   SESSIONID=hier_deine_sessionid
-   STEAMLOGINSECURE=hier_dein_steamLoginSecure
-   ```
+## 1) Herunterladen und Ordner öffnen
+- Den Projektordner z. B. nach C:\Users\<Name>\Documents\steam-group-blocker kopieren.
+- PowerShell im Projektordner öffnen:
+  - Rechtsklick im Ordner → „Im Terminal öffnen“.
 
-Hinweis zum Bild: Es zeigt exakt die beiden benötigten Cookie‑Einträge „sessionid“ und „steamLoginSecure“ im Cookie‑Speicher des Browsers, die in die .env übernommen werden müssen [image:1]
-![Uploading 68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67.png…]()
-
-## Skript starten [image:1]
-- PowerShell im Projektordner öffnen, virtuelles Environment aktivieren und das Skript starten [image:1]
+## 2) Python und Umgebung
+- Python 3.11 oder neuer installieren: https://www.python.org/downloads/windows/
+- Virtuelle Umgebung anlegen:
   ```
-  .\.venv\Scripts\Activate.ps1
-  python .\steam-group-blocker.py
+  python -m venv .venv
+  . .\.venv\Scripts\Activate.ps1
   ```
-- Während der Ausführung erscheint ein kompakter Fortschrittsbalken, der Seitenfortschritt, gesammelte IDs sowie Erfolge und Fehler anzeigt [image:1]
+- Benötigte Pakete installieren:
+  ```
+  pip install -r requirements.txt
+  ```
+  Falls keine requirements.txt vorhanden ist:
+  ```
+  pip install requests python-dotenv rich
+  ```
 
-## Tipps bei Problemen (kurz) [image:1]
-- Bei 400/403 Fehlern Cookies in .env erneuern, also „sessionid“ und „steamLoginSecure“ erneut aus dem Browser kopieren und speichern, dann Skript neu starten [image:1]
-- Wenn die PowerShell das Aktivieren der virtuellen Umgebung blockiert, PowerShell als Administrator öffnen und „Set‑ExecutionPolicy RemoteSigned“ ausführen, dann erneut aktivieren [image:1]
-- Bei auffällig vielen Verbindungswarnungen oder Aussetzern die parallele Last im Skript reduzieren und erneut probieren, das verbessert die Stabilität auf Windows oft deutlich [image:1]
+## 3) Cookies eintragen (.env)
+- Im Projektordner eine Datei .env anlegen.
+- Zwei Werte aus dem eingeloggten Browser kopieren (Domain steamcommunity.com):
+  - sessionid
+  - steamLoginSecure
+- Inhalt der .env:
+  ```
+  SESSIONID=hier_den_sessionid_wert_einfügen
+  STEAMLOGINSECURE=hier_den_steamLoginSecure_wert_einfügen
+  ```
+- Tipp: Cookies im Browser finden (eingeloggt sein), dann Entwickler‑Werkzeuge öffnen → Speicher/Storage → Cookies → steamcommunity.com → sessionid und steamLoginSecure ablesen (siehe Screenshot).
 
-## Sicherheit [image:1]
-- Die Datei .env niemals weitergeben oder ins Internet hochladen, da sie Zugangsdaten enthält, und am besten in .gitignore eintragen, wenn ein Git‑Repository verwendet wird [image:1]
+## 4) Gruppenliste anlegen (groups.txt)
+- Datei groups.txt im Projektordner erstellen.
+- Pro Zeile genau eine Gruppen‑URL eintragen, z. B.:
+  ```
+  https://steamcommunity.com/groups/afd-esport
+  ```
+- Mehrere Gruppen sind möglich: einfach weitere Zeilen hinzufügen.
+
+## 5) Starten
+- Standard‑Start (liest groups.txt, verwendet .env):
+  ```
+  python .\main.py
+  ```
+- Während der Laufzeit:
+  - Es erscheint ein kompakter Fortschrittsbalken (Seiten, IDs, OK/Fehler).
+  - Bei Netzwerkfehlern wartet das Tool kurz und läuft automatisch weiter.
+
+## 6) Häufige Fragen (kurz)
+- „Dry‑Run“ (nur IDs anzeigen, nichts blocken)?
+  - In der mitgelieferten Konfiguration kann ein Trockentest aktiviert sein; für einen echten Lauf sicherstellen, dass dieser aus ist.
+- „Zu viele Meldungen in der Konsole“?
+  - Normal. Die Anzeige bleibt bewusst kompakt; Warnungen sind unkritisch, wenn der Fortschritt weiterläuft.
+- „Es passiert nichts“?
+  - Prüfen, ob .env korrekt gefüllt ist und groups.txt gültige URLs enthält.
+  - Bei weiterem Problem PowerShell neu starten und erneut versuchen.
+
+## 7) Sicher aufräumen
+- Beenden: Fenster schließen oder Strg + C.
+- Virtuelle Umgebung beenden:
+  ```
+  deactivate
+  ```
+- .env niemals veröffentlichen.
