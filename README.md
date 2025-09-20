@@ -2,9 +2,6 @@
 
 Dieses Tool liest Mitglieder einer Steam‑Gruppe ein und blockiert oder entblockt sie automatisiert.
 
-Wichtig
-- Nutzung auf eigenes Risiko. Cookies privat halten.
-
 ---
 
 ## 1) Herunterladen und Ordner öffnen
@@ -63,3 +60,6 @@ Wichtig
 - „Es passiert nichts“?
   - Prüfen, ob .env korrekt gefüllt ist und groups.txt gültige URLs enthält.
   - Bei weiterem Problem PowerShell neu starten und erneut versuchen.
+
+
+Nutzung auf eigenes Risiko. Cookies privat halten.
