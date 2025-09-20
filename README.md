@@ -10,11 +10,11 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
 - Python 3.11+ für Windows installieren: https://www.python.org/downloads/windows/ (Häkchen „Add Python to PATH“ setzen).  
 - Abhängigkeiten installieren:
   ```
-  pip install -r requirements.txt
+  py -m pip install -r requirements.txt
   ```
   Falls die Datei fehlt:
   ```
-  pip install requests python-dotenv rich
+  py -m pip install --user requests python-dotenv rich
   ```
 
 ## 3) Cookies eintragen (.env)
