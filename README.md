@@ -1,4 +1,3 @@
-```markdown
 # Steam Group Members Blocker
 
 Ein CLI‑Tool, das Mitglieder einer Steam‑Gruppe über den XML‑Feed einliest und anschließend wahlweise blockiert oder wieder entblockt – mit .env‑Cookies, TOML‑Konfiguration, optionaler Parallelisierung und einer kompakten, einzeiligen Rich‑Progress‑Anzeige (Fetch + Block).
@@ -166,26 +165,3 @@ MIT‑Lizenz (siehe LICENSE).
 
 - Issues und Pull Requests sind willkommen (Fehlerberichte, Verbesserungen, Dokumentation).
 - Bitte sensible Daten (Cookies, IDs) nicht in Issues posten.
-
-```
-
-[1](https://github.com/othneildrew/Best-README-Template)
-[2](https://realpython.com/readme-python-project/)
-[3](https://git.ifas.rwth-aachen.de/templates/ifas-python-template/-/blob/master/README.md)
-[4](https://github.com/lincc-frameworks/python-project-template)
-[5](https://dev.to/sumonta056/github-readme-template-for-personal-projects-3lka)
-[6](https://github.com/alan-turing-institute/python-project-template)
-[7](https://github.com/catiaspsilva/README-template)
-[8](https://www.youtube.com/watch?v=12trn2NKw5I)
-[9](https://www.makeareadme.com)
-[10](https://github.com/saezlab/python-project)
-[11](https://iopscience.iop.org/article/10.3847/2515-5172/ad4da1)
-[12](https://arxiv.org/abs/2503.04921)
-[13](http://thesai.org/Publications/ViewPaper?Volume=15&Issue=11&Code=ijacsa&SerialNo=110)
-[14](https://ieeexplore.ieee.org/document/10633301/)
-[15](http://ksiresearch.org/seke/seke21paper/paper162.pdf)
-[16](https://jds-online.org/doi/10.6339/22-JDS1059)
-[17](https://www.semanticscholar.org/paper/c23c5014583b7fcb96db7abd17e3ab0b39f55b58)
-[18](https://academic.oup.com/nar/article/50/W1/W753/6582172)
-[19](http://biorxiv.org/lookup/doi/10.1101/789842)
-[20](https://ieeexplore.ieee.org/document/10931854/)
