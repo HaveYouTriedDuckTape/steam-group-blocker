@@ -29,13 +29,21 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   STEAMLOGINSECURE=hier_dein_steamLoginSecure
   ```
 ## 3b) Cookies eintragen - Version B: config.toml
-- Die Cookies-Daten in config.toml eintragen unter:
+- config.toml von:
   ```
   [cookies]
   # Cookies aus .env laden (SESSIONID, STEAMLOGINSECURE) oder hier explizit setzen
   use_env = true
   # sessionid = ""
   # steamLoginSecure = ""
+  ```
+- Zu folgendem ändern:
+  ```
+  [cookies]
+  # Cookies aus .env laden (SESSIONID, STEAMLOGINSECURE) oder hier explizit setzen
+  use_env = false
+  sessionid = "2134ik14jtjn14ik12"
+  steamLoginSecure = "134124oogo1o1313o1"
   ```
 
 ## 4) Gruppenliste prüfen (groups.txt)
