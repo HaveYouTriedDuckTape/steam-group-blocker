@@ -22,7 +22,7 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
 
   <img width="765" height="345" alt="68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67" src="https://github.com/user-attachments/assets/9c68e94a-0a08-411e-8ccb-1fb6d8608259" />
 
-- Im Projektordner eine Datei `.env` anlegen. (Einfache eine Textdatei anlegen und in ".env" unbennen)
+- Im Projektordner eine Datei `.env` anlegen. (Einfache eine Textdatei anlegen und in ".env" umbenennen)
 - Die Werte `sessionid` und `steamLoginSecure` in die .env-Datei kopieren und so eintragen:
   ```
   SESSIONID=hier_deine_sessionid
