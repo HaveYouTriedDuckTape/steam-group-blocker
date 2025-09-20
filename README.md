@@ -17,7 +17,7 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   py -m pip install --user requests python-dotenv rich
   ```
 
-## 3) Cookies eintragen
+## 3a) Cookies eintragen - Version A: .env-Datei
 - Im Browser bei steamcommunity.com angemeldet sein, dann Entwicklerwerkzeuge (F12) → „Application/Storage“ → „Cookies“ → `https://steamcommunity.com`.
 
   <img width="765" height="345" alt="68747470733a2f2f692e696d6775722e636f6d2f3238636b5852622e706e67" src="https://github.com/user-attachments/assets/9c68e94a-0a08-411e-8ccb-1fb6d8608259" />
@@ -28,7 +28,8 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   SESSIONID=hier_deine_sessionid
   STEAMLOGINSECURE=hier_dein_steamLoginSecure
   ```
-- oder die Cookies-Daten in config.toml eintragen unter:
+## 3b) Cookies eintragen - Version B: config.toml
+- Die Cookies-Daten in config.toml eintragen unter:
   ```
   [cookies]
   # Cookies aus .env laden (SESSIONID, STEAMLOGINSECURE) oder hier explizit setzen
@@ -36,7 +37,6 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   # sessionid = ""
   # steamLoginSecure = ""
   ```
-Hinweis: Cookies können ablaufen; bei Fehlern die beiden Werte einfach neu aus dem Browser übernehmen.
 
 ## 4) Gruppenliste prüfen (groups.txt)
 - Die Datei `groups.txt` ist bereits im Repository vorhanden.  
@@ -54,6 +54,7 @@ Hinweis: Cookies können ablaufen; bei Fehlern die beiden Werte einfach neu aus 
 - Während der Ausführung zeigt das Tool einen kompakten Fortschrittsbalken (Seiten, IDs, Erfolge/Fehler).
 
 ## 6) Kurz‑Hilfe
+- Cookies können ablaufen; bei Fehlern die beiden Werte einfach neu aus dem Browser übernehmen.
 - 400/403 oder „passiert nichts“: `.env` prüfen und Cookies erneuern.  
 - Viele Meldungen/Warnungen sind normal, solange der Fortschritt sichtbar weiterläuft.
 
