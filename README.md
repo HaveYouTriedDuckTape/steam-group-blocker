@@ -12,7 +12,7 @@ Einfaches Tool das automatisch alle Mitglieder der Steam-AfD-Gruppen bei Steam b
   ```
   py -m pip install -r requirements.txt
   ```
-  Falls die Datei fehlt:
+  oder:
   ```
   py -m pip install requests python-dotenv rich
   ```
